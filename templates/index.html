@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function mostrarDatoGuardado() {
+            $.get('/obtener_dato', function(data) {
+                alert("El dato guardado es: " + data.dato);
+            });
+        }
+    </script>
+</head>
+<body>
+    <form action="/guardar" method="post">
+        <label for="dato">Ingrese un dato:</label>
+        <input type="text" id="dato" name="dato">
+        <button type="submit">Enviar</button>
+    </form>
+    <button onclick="mostrarDatoGuardado()">Mostrar Dato Guardado</button>
+</body>
+</html>
